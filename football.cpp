@@ -32,7 +32,7 @@ int main()
 
     temp2 = (tt2 << 1) + ak2 + de2;
     temp2 = temp2 << 16;
-    double adv = (temp1 - temp2) / (80);
+    double adv = (temp1 - temp2) / (120);
 
     bool ball;
     vector<pair<int, int>> PS; // predicted scores
@@ -61,12 +61,12 @@ int main()
             if (ball)
             {
                 ++countBall1;
-                count1 += ((noise) * ((tt1 - tt2 + (ak1 - de2) * 2) / 7 + noise2) > 7.63);
+                count1 += (noise + ((tt1 - tt2 + (ak1 - de2) * 2) / 9 + noise2) > 5);
             }
             else
             {
                 ++cb2;
-                count2 += ((noise) * ((tt2 - tt1 + (ak2 - de1) * 2) / 7 + noise2) > 7.63);
+                count2 += (noise + ((tt2 - tt1 + (ak2 - de1) * 2) / 9 + noise2) > 5);
             }
         }
 
